@@ -54,12 +54,12 @@
         <p data-key="hello-sign-in">Hello Sign-in</p>
         <h1 data-key="account-list">Account&list<img src="drop down.png" width="12px"></h1>
 
-    </div>
+<!--     </div>
       <div class="nav-text">
         <p data-key="return">Return</p>
         <h1 data-key="orders">& orders</h1>
 
-    </div>
+    </div> -->
     <a href="#" class="nav-cart" id="cart-toggle" style="position: relative;">
   <img src="cart.jpg" width="35px" alt="">
   <h4 data-key="cart">Cart</h4>
@@ -605,6 +605,32 @@ document.getElementById('detail-cart')?.addEventListener('click', function () {
 
 // ✅ On page load, show cart
 window.addEventListener("DOMContentLoaded", displayCart);
+    function searchProduct() {
+  const input = document.getElementById("search-box").value.toLowerCase().trim();
+  const products = document.querySelectorAll(".pro");
+  const currentLang = localStorage.getItem("selectedLanguage") || "English";
+
+  for (let pro of products) {
+    const nameElement = pro.querySelector('h5');
+    if (!nameElement) continue;
+
+    const englishKey = nameElement.getAttribute("data-key");
+    if (!englishKey) continue;
+
+    const translated = translations[currentLang]?.[englishKey]?.toLowerCase();
+    const inputMatch = translated && translated.includes(input);
+
+    if (inputMatch || englishKey.toLowerCase().includes(input)) {
+      const fileToOpen = pro.getAttribute("data-file");
+      if (fileToOpen) {
+        window.location.href = fileToOpen;
+        return;
+      }
+    }
+  }
+
+  alert("❌ Product not found!");
+}
  </script>
   
 <script src="script.js"></script>
