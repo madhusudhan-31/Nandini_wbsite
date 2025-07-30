@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">
+             <img src="kmf1.jpg" width="100" alt="">
+        </a>
+       <div class="nav-country">
+        <img src="location.jpg" width="20" alt="">
+        <div>
+            <p>
+                Delivery To
+            </p>
+            <h1>
+               Karnataka
+            </h1>
+        </div>
+       </div>
+       <div class="nav-search">
+        <div class="nav-search-category">
+            <p>All</p> 
+            <img src="drop down.png" height="12" alt="">
+
+
+
+        </div>
+        <input type="text" class="nav-search-input" placeholder="search Nandini">
+        <img src="search-icon.jpg" class="nav-search-icon" alt="">
+      
+    </div>
+     <div class="nav-language">
+        
+     <h3>Select a Language:</h3>
+
+  <div class="dropdown" id="dropdown">
+  <div class="dropdown-selected" onclick="toggleDropdown()">Select Language ▼</div>
+  <div class="dropdown-items" id="dropdown-list">
+    <div onclick="selectItem(this)">English</div>
+    <div onclick="selectItem(this)">Kannada</div>
+    <div onclick="selectItem(this)">Hindi</div>
+    <div onclick="selectItem(this)">Tamil</div>
+    <div onclick="selectItem(this)">Telugu</div>
+  </div>
+  </div>
+    </div>
+    <div class="nav-text">
+        <p>Hello Sign-in</p>
+        <h1>Account&list<img src="drop down.png" width="12px"></h1>
+
+    </div>
+      <div class="nav-text">
+        <p>Return</p>
+        <h1>& orders</h1>
+
+    </div>
+   <a href="#" class="nav-cart" id="cart-toggle" style="position: relative;">
+  <img src="cart.jpg" width="35px" alt="">
+  <h4>Cart</h4>
+
+  <!-- Hidden dropdown cart -->
+  <div id="cart-box" style="
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 250px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 999;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  ">
+    <div id="cart-section">
+  <h3>Cart Items</h3>
+  <div id="cart-items"></div>
+</div>
+</a>
+    </nav>
+     <div class="nav-bottom">
+          <div>
+             <i id="bar" class="fas fa-outdent"></i>
+            <a href="home .html" data-key="home">Home</a>
+            <a href="shop.html"  data-key="shop">shop</a>
+            <a href="shop.html" data-key="blog">Blog</a>
+            <a href="about.html"data-key="about">About</a>
+            <a href="contact.html" data-key="contact">contact</a>
+            <a href="history.html" data-key="history"> Oreder-History</a>
+        </div>
+
+    </div>
+    <div class="header">
+     <marquee>
+    <h1>Read more</h1>
+    <h3>Read all the case studies</h3></marquee>
+  </div>
+<section id="Blog">
+  <div class="blogbox">
+
+    <!-- First Product -->
+    <div class="blog-row">
+      <div class="pro">
+        <div class="image-wrapper">
+          <img src="scoopshot.jpg" alt="">
+          <div class="desc-overlay">
+            <span>Nandini</span>
+            <h5>Ghee</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>Rs 40</h4>
+            <a href="#"><i class="fas fa-shopping-cart" id="cart"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-details">
+        <h3>Nandini Tender Coconut Ice Cream</h3>
+        <h4>
+          It contains real tender coconut bits for an
+          authentic tropical taste.The product is hygienically
+           packed and ideal for all age groups.
+          Refreshing and unique, with creamy texture and 
+          natural coconut flavor—it's perfect for summer indulgence.
+        </h4>
+      </div>
+    </div>
+
+    <!-- Second Product -->
+    <div class="blog-row">
+      <div class="pro">
+        <div class="image-wrapper">
+          <img src="choco-chips.png" alt="">
+          <div class="desc-overlay">
+            <span>Nandini</span>
+            <h5>Ghee</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>Rs 40</h4>
+            <a href="#"><i class="fas fa-shopping-cart" id="cart"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-details">
+        <h3>Nandini Choco Chips Fresh Milk Ice Cream Pack</h3>
+        <h4>
+          Nandini Choco Chips Ice Cream is a rich and creamy
+           dessert made from pure fresh milk.It features the
+         irresistible flavor of chocolate blended with crunchy 
+         choco chips.The pack offers 25% extra, giving you 675g
+          for the price of 540g—great value and taste!Perfect for all ages, 
+          it's a delightfully tasty treat for chocolate and ice cream lovers alike.
+        </h4>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+ <section id="Pagination" class="section-p1">
+    <a href="home .html">1</a>
+    <a href="shop.html">2</a>
+    <a href="history.html"><i class="fas fa-long-arrow-alt-right"></i></a>
+  </section>
+  <section id="newsletter" class="section-p1" class="section-m1">
+    <div class="newstext">
+        <h4>Sign up for NewsLetter</h4>
+       <marquee> <p>Get E-mail updates on our latest Products And <span>sepciall offer</span></p></marquee> 
+    </div>
+    <div class="form">
+       <input type="text" placeholder="Your E-mail ">
+        <button class="normal">sign in</button>
+    </div>
+
+  </section>
+  <footer class="section-p1">
+    <div class="col">
+        <img src="kmf1.jpg" width="100" alt="">
+        <h4>contact</h4>
+        <p><strong>Adress:</strong>Bangalore Rajajinagaar 8th cross</p>
+        <p><strong>Phone:</strong>9972100772</p>
+        <p><strong>Hours:</strong>4AM - 12PM All days</p>
+        <div class="follow">
+            <h4>Follow US</h4>
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+           </div>
+    <div class="col">
+        <h4>About</h4>
+
+        <a href="#">About Us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms And Conditions</a>
+        <a href="#">Contact Us</a>
+    </div>
+      <div class="col">
+        <h4>My Account</h4>
+
+        <a href="#">sign in</a>
+        <a href="#">Viwe Chart</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">My Whistlist</a>
+        <a href="#">Track My order</a>
+    </div>
+    <div class="col install">
+        <h4>Install App</h4>
+
+        <p> From App Store or Google Play</p>
+        <diV class="row">
+            <img src="app.jpg" alt="">
+            <img src="play.jpg" alt="">
+
+        </diV>
+        <p>Secured Payment Gateway</p>
+        <img src="pay.png" alt="">
+
+    </div>
+     
+  </footer>
+  
+<script src="script.js"></script>
+</body>
+</html>

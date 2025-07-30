@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order History</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0077cc;
+    }
+
+    .order-container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .order-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .order-item img {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+      margin-right: 15px;
+    }
+
+    .order-details {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .order-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 20px auto;
+      padding: 8px 16px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧾 Order History</h1>
+  <a href="home .html" class="back-btn">← Back to Home</a>
+
+  <div class="order-container" id="orderHistoryContainer">
+    <!-- Order items will be injected here -->
+  </div>
+
+  <script>
+
+    const orderHistory = JSON.parse(localStorage.getItem("orderHistory")) || [];
+  const container = document.getElementById("orderHistoryContainer");
+
+  if (orderHistory.length === 0) {
+    container.innerHTML = "<p style='text-align:center;'>No past orders found.</p>";
+  } else {
+    orderHistory.forEach(order => {
+      const orderBox = document.createElement("div");
+      orderBox.className = "order-container";
+      orderBox.innerHTML = `
+        <h3 style="margin-top:0;">🧾 Order from ${order.date}</h3>
+        <p><strong>User:</strong> ${order.user}</p>
+        <p><strong>Email:</strong> ${order.email}</p>
+      `;
+
+      order.items.forEach(item => {
+        const itemTotal = item.unitPrice * item.quantity;
+
+        const itemHTML = `
+          <div class="order-item">
+            <div class="order-details">
+              <img src="${item.img}" alt="${item.name}" />
+              <div class="order-info">
+                <strong>${item.name}</strong>
+                <span>Qty: ${item.quantity}</span>
+                <span>Unit Price: ₹${item.unitPrice}</span>
+              </div>
+            </div>
+            <div><strong>₹${itemTotal}</strong></div>
+          </div>
+        `;
+
+        orderBox.innerHTML += itemHTML;
+      });
+
+      orderBox.innerHTML += `<p style="text-align:right;"><strong>Total: ₹${order.total}</strong></p>`;
+      container.appendChild(orderBox);
+    });
+  }
+  </script>
+</body>
+</html>

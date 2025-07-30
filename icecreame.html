@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">
+             <img src="kmf1.jpg" width="100" alt="">
+        </a>
+       <div class="nav-country">
+        <img src="location.jpg" width="20" alt="">
+        <div>
+            <p data-key="delivery-to">
+                Delivery To
+            </p>
+            <h1  data-key="location">
+               Karnataka
+            </h1>
+        </div>
+       </div>
+        <div class="nav-search">
+        <div class="nav-search-category">
+            <p data-key="all">All</p> 
+            <img src="drop down.png" height="12" alt="">
+
+
+
+        </div>
+        <input type="text" class="nav-search-input" id="search-box" placeholder="search Nandini">
+        <img src="search-icon.jpg" class="nav-search-icon"onclick="searchProduct()"alt="">
+      
+    </div>
+    <div class="nav-language">
+        
+     <h3>Select a Language:</h3>
+
+  <div class="dropdown" id="dropdown">
+  <div class="dropdown-selected" onclick="toggleDropdown()">Select Language ▼</div>
+  <div class="dropdown-items" id="dropdown-list">
+    <div onclick="selectItem(this)">English</div>
+    <div onclick="selectItem(this)">Kannada</div>
+    <div onclick="selectItem(this)">Hindi</div>
+    <div onclick="selectItem(this)">Tamil</div>
+    <div onclick="selectItem(this)">Telugu</div>
+  </div>
+  </div>
+    </div>
+    <!-- <div class="nav-text">
+        <p data-key="hello-sign-in">Hello Sign-in</p>
+        <h1 data-key="account-list">Account&list<img src="drop down.png" width="12px"></h1>
+
+    </div>
+      <div class="nav-text">
+        <p data-key="return">Return</p>
+        <h1 data-key="orders">& orders</h1>
+
+    </div> -->
+       <a href="#" class="nav-cart" id="cart-toggle" style="position: relative;">
+  <img src="cart.jpg" width="35px" alt="">
+  <h4 data-key="cart">Cart</h4></a>
+
+  <!-- Hidden dropdown cart -->
+  <div id="cart-box" style="
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 250px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 999;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  ">
+    <div id="cart-section">
+  <h3 data-key="cart-items">Cart Items</h3>
+  <div id="cart-items"></div>
+</div>
+
+    </nav>
+    <div class="nav-bottom">
+          <div>
+             <i id="bar" class="fas fa-outdent"></i>
+            <a href="home .html" data-key="home">Home</a>
+            <a href="shop.html"  data-key="shop">shop</a>
+            <a href="shop.html" data-key="blog">Blog</a>
+            <a href="about.html"data-key="about">About</a>
+            <a href="contact.html" data-key="contact">contact</a>
+            <a href="history.html" data-key="history"> Oreder-History</a>
+        </div>
+
+    </div>
+  <div class="header-slider">
+    <a href="#" class="control_prev">&#129144</a>
+    <a href="#" class="control_next">&#129146</a>
+    <ul>
+         <img src="header1.jpg" class="header-img" alt="">
+          <img src="header2.jpg" class="header-img" alt="">
+        <img src="header3.jpg" class="header-img" alt="">
+        <img src="header4.jpg" class="header-img" alt="">
+      </ul>
+  </div>
+   <section id="productdeatils" class="section-p1">
+    <div class="single-pro-image">
+     <img src="icecreame.jpg"  width="100%" id="MainImg"alt="">
+     <div class="small-img-group">
+      <div class="small-img-col">
+        <img src="icecreame1.jpg" width="100%"  class="small-img"alt="">
+      </div>
+       <div class="small-img-col">
+        <img src="icecreame2.jpg" width="100%"  class="small-img"alt="">
+      </div>
+       <div class="small-img-col">
+        <img src="icecreame3.jpg" width="100%"  class="small-img"alt="">
+      </div>
+     </div>
+    </div>
+    <div class="single-pro-details">
+        <h6  data-key="icecream">icecream</h6>
+        <h4  data-key="icecream">icecream</h4>
+        <h3>RS 40</h3>
+        <input type="number" val="1">
+        <button class="fas fa-shopping-cart normal" id="detail-cart" data-key="addcart" >Add To Cart</button>
+        <h4 data-key="Productdetails">product details</h4>
+        <span data-key="info">
+             Nandini Ice Cream offers a delicious and refreshing dessert made from pure milk and quality ingredients. 
+             Available in a variety of flavors like vanilla, strawberry, chocolate, and mango, it caters to all taste preferences. 
+             Its smooth and creamy texture delights both kids and adults alike. Perfect for celebrations or 
+             a quick sweet treat, Nandini Ice Cream combines taste, quality, and tradition in every scoop.
+
+        </span>
+    </div>
+
+
+
+   
+    
+
+   </section>
+    <div id="product" class="section-p1">
+    <h2 data-key="new-products">New Products</h2>
+    <p data-key="dairy-products">The Dairy products</p>
+    <div class="pro-container1">
+        <div class="pro" data-file="icecreame.html">
+            <img src="icecreame.jpg" onclick="window.location.href='icecreame.html';" alt="">
+            <div class="desc">
+                <span data-key="brand-nandini">
+                 Nandini
+                </span>
+                <h5 data-key="icecream">
+                 Special icecreame
+                </h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h4>Rs 70</h4>
+                    </div>
+                    <a href="#"><i class="fas fa-shopping-cart" id="cart"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="pro">
+            <img src="cocunt.jpg" alt="">
+            <div class="desc">
+                <span data-key="brand-nandini">
+                 Nandini
+                </span>
+                <h5 data-key="tender_coconut">
+               cocounut Pwder
+                </h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h4>Rs 40</h4>
+                    </div>
+                    <a href="#"><i class="fas fa-shopping-cart" id="cart"></i></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="pro" data-file="icecreame.html">
+            <img src="cone.webp"  onclick="window.location.href='icecreame.html';"alt="">
+            <div class="desc">
+                <span data-key="brand-nandini">
+                 Nandini
+                </span>
+                <h5 data-key="cone">
+                 Cone
+                </h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h4>Rs 40</h4>
+                    </div>
+                    <a href="#"><i class="fas fa-shopping-cart" id="cart"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="pro" data-file="Bevarage.html">
+            <img src="butter milk.jpg" onclick="window.location.href='Bevarage.html';"alt="">
+            <div class="desc">
+                <span data-key="brand-nandini">
+                 Nandini
+                </span>
+                <h5 data-key="buttermilk">
+                Butter Milk
+                </h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h4>Rs 40</h4>
+                    </div>
+                    <a href="#"><i class="fas fa-shopping-cart" id="cart"></i></a>
+                </div>
+            </div>
+        </div>
+        <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+        <h4 data-key="newsletter-title">Sign up for NewsLetter</h4>
+        <marquee><p data-key="newsletter-desc">Get E-mail updates on our latest Products And <span data-key="special-offer">special offer</span></p></marquee>
+    </div>
+    <div class="form">
+        <input type="text" placeholder="Your E-mail">
+        <button class="normal" data-key="signin-btn">Sign in</button>
+    </div>
+</section>
+
+<footer class="section-p1">
+    <div class="col">
+        <img src="kmf1.jpg" width="100" alt="">
+        <h4 data-key="contact">Contact</h4>
+        <p><strong>Address:</strong> <span data-key="address">Bangalore Rajajinagar 8th cross</span></p>
+        <p><strong>Phone:</strong> 9972100772</p>
+        <p><strong>Hours:</strong> <span data-key="hours">4AM - 12PM All days</span></p>
+        <div class="follow">
+            <h4 data-key="follow-us">Follow Us</h4>
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <h4 data-key="about">About</h4>
+        <a href="#" data-key="about-us">About Us</a>
+        <a href="#" data-key="delivery-info">Delivery Information</a>
+        <a href="#" data-key="privacy-policy">Privacy Policy</a>
+        <a href="#" data-key="terms">Terms And Conditions</a>
+        <a href="#" data-key="contact-us">Contact Us</a>
+    </div>
+
+    <div class="col">
+        <h4 data-key="my-account">My Account</h4>
+        <a href="#" data-key="signin">Sign In</a>
+        <a href="#" data-key="view-cart">View Cart</a>
+        <a href="#" data-key="wishlist">My Wishlist</a>
+        <a href="#" data-key="track-order">Track My Order</a>
+    </div>
+
+    <div class="col install">
+        <h4 data-key="install-app">Install App</h4>
+        <p data-key="download-app">From App Store or Google Play</p>
+        <div class="row">
+            <img src="app.jpg" alt="">
+            <img src="play.jpg" alt="">
+        </div>
+        <p data-key="secure-pay">Secured Payment Gateway</p>
+        <img src="pay.png" alt="">
+    </div>
+     
+  </footer>
+<script>
+    var image =document.getElementById("MainImg");
+    var small=document.getElementsByClassName("small-img")
+    small[0].onclick=function(){
+        MainImg.src=small[0].src
+    }
+     small[1].onclick=function(){
+        MainImg.src=small[1].src
+    }
+     small[2].onclick=function(){
+        MainImg.src=small[2].src
+    }
+     const MainImg = document.getElementById("MainImg");
+  const smallImages = document.getElementsByClassName("small-img");
+
+  for (let i = 0; i < smallImages.length; i++) {
+    smallImages[i].addEventListener("click", function () {
+      MainImg.src = this.src;
+    });
+  }
+    const translations = {
+  English: {
+    "delivery-to": "Delivery To",
+    "location": "Karnataka",
+    "all": "All",
+    "hello-sign-in": "Hello Sign-in",
+    "account-list": "Account & list",
+    "return": "Return",
+    "orders": "& orders",
+    "cart": "Cart",
+    "addcart":"Add to cart",
+    "cart-items": "Cart Items",
+    "home": "Home",
+    "shop": "Shop",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "featured-product": "Featured Product",
+    "dairy-products": "The Dairy products",
+    "brand-nandini": "Nandini",
+    "product-special-milk": "Special Milk",
+    "price-rs40": "Rs 40",
+    "featured": "Featured Product",
+    "dairy": "The Dairy products",
+    "special_milk": "Special Milk",
+    "ghee": "Ghee",
+   "curd": "Curd",
+    "cheese": "Cheese",
+    "chocolates": "Chocolates",
+    "beverages": "Beverages",
+    "normal_milk": "Normal Milk",
+    "buffalo_ghee": "Buffalo Ghee",
+    "slice": "Slice",
+    "peda": "Peda",
+    "buttermilk": "Buttermilk",
+  "pistel_drink": "Pistel Drink",
+    "icecream": "Special Ice Cream",
+    "tender_coconut": "Tender Coconut Powder",
+    "cone": "Cone",
+    "candy": "Candy",
+    "mysore_pak": "Mysore Pak",
+   " scooping": "Scooping",
+   "page1": "1",  
+    "page1": "1",
+      "page2": "2",
+      "newsletter-title": "Sign up for NewsLetter",
+      "newsletter-desc": "Get E-mail updates on our latest Products And",
+      "special-offer": "special offer",
+      "signin-btn": "Sign in",
+      "contact": "Contact",
+      "address": "Bangalore Rajajinagar 8th cross",
+      "hours": "4AM - 12PM All days",
+      "follow-us": "Follow Us",
+      "about": "About",
+      "about-us": "About Us",
+      "delivery-info": "Delivery Information",
+      "privacy-policy": "Privacy Policy",
+      "terms": "Terms And Conditions",
+      "contact-us": "Contact Us",
+      "my-account": "My Account",
+      "signin": "Sign In",
+      "view-cart": "View Cart",
+      "wishlist": "My Wishlist",
+      "track-order": "Track My Order",
+      "install-app": "Install App",
+      "download-app": "From App Store or Google Play",
+      "secure-pay": "Secured Payment Gateway",
+      "new-products": "New Products",
+     "dairy-products": "The Dairy products",
+     "Productdetails":"Product Details",
+     "info":"Nandini Ice Cream offers a delicious and refreshing dessert made from pure milk and quality ingredients. Available in a variety of flavors like vanilla, strawberry, chocolate, and mango, it caters to all taste preferences. Its smooth and creamy texture delights both kids and adults alike. Perfect for celebrations or a quick sweet treat, Nandini Ice Cream combines taste, quality, and tradition in every scoop."},
+      Kannada:{
+    "delivery-to": "ವಿತರಣೆಗೆ",
+    "location": "ಕರ್ನಾಟಕ",
+    "all": "ಎಲ್ಲಾ",
+    "hello-sign-in": "ನಮಸ್ಕಾರ ಲಾಗಿನ್",
+    "account-list": "ಖಾತೆ ಮತ್ತು ಪಟ್ಟಿ",
+    "return": "ಹಿಂತಿರುಗು",
+    "orders": "ಆದೇಶಗಳು",
+    "cart": "ಕಾರ್ಟ್",
+    "cart-items": "ಕಾರ್ಟ್ ಐಟಂಗಳು",
+    "home": "ಮುಖಪುಟ",
+    "shop": "ಅಂಗಡಿ",
+    "blog": "ಬ್ಲಾಗ್",
+    "about": "ಬಗ್ಗೆ",
+    "contact": "ಸಂಪರ್ಕಿಸಿ",
+    "featured-product": "ಪ್ರಮುಖ ಉತ್ಪನ್ನಗಳು",
+    "dairy-products": "ಹಾಲು ಉತ್ಪನ್ನಗಳು",
+    "brand-nandini": "ನಂದಿನಿ",
+    "product-special-milk": "ವಿಶೇಷ ಹಾಲು",
+    "price-rs40": "ರೂ ೪೦",
+    " featured": "ಪ್ರಮುಖ ಉತ್ಪನ್ನ",
+    "dairy": "ಹಾಲು ಉತ್ಪನ್ನಗಳು",
+    "special_milk": "ವಿಶೇಷ ಹಾಲು",
+    "ghee": "ತುಪ್ಪ",
+    "curd": "ಮೊಸರು",
+    "cheese": "ಚೀಸ್",
+    "chocolates": "ಚಾಕೊಲೇಟ್‌ಗಳು",
+    "beverages": "ಪಾನೀಯಗಳು",
+    "normal_milk": "ಸಾಮಾನ್ಯ ಹಾಲು",
+    "buffalo_ghee": "ಎಮ್ಮೆ ತುಪ್ಪ",
+    "slice": "ಸ್ಲೈಸ್",
+    "peda": "ಪೇಡಾ",
+    "buttermilk": "ಮಜ್ಜಿಗೆ",
+    "pistel_drink": "ಪಿಸ್ತಾ ಪಾನೀಯ",
+    "icecream": "ಐಸ್ ಕ್ರೀಮ್",
+    "tender_coconut": "ತೆಳುವು ತೆಂಗಿನಕಾಯಿ ಪುಡಿ",
+    "cone": "ಕೊನ್",
+    "candy": "ಕ್ಯಾಂಡಿ",
+    "mysore_pak": "ಮೈಸೂರು ಪಾಕ್",
+    "scooping": "ಸ್ಕೂಪಿಂಗ್",
+          "page1": "೧",
+      "page2": "೨",
+      "newsletter-title": "ನ್ಯೂಸ್‌ಲೆಟರ್‌ಗೆ ಸೈನ್ ಅಪ್ ಮಾಡಿ",
+      "newsletter-desc": "ನಮ್ಮ ಇತ್ತೀಚಿನ ಉತ್ಪನ್ನಗಳು ಮತ್ತು",
+      "special-offer": "ವಿಶೇಷ ಆಫರ್",
+      "signin-btn": "ಸೈನ್ ಇನ್",
+      "contact": "ಸಂಪರ್ಕಿಸಿ",
+      "address": "ಬೆಂಗಳೂರು ರಾಜಾಜಿನಗರ ೮ನೇ ಕ್ರಾಸ್",
+      "hours": "ಸಕಾಲ ೪ ರಿಂದ ಮಧ್ಯಾಹ್ನ ೧೨ ರವರೆಗೆ ಪ್ರತಿದಿನವೂ",
+      "follow-us": "ನಮ್ಮನ್ನು ಅನುಸರಿಸಿ",
+      "about": "ಬಗ್ಗೆ",
+      "about-us": "ನಮ್ಮ ಬಗ್ಗೆ",
+      "delivery-info": "ವಿತರಣಾ ಮಾಹಿತಿ",
+      "privacy-policy": "ಗೌಪ್ಯತಾ ನೀತಿ",
+      "terms": "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು",
+      "contact-us": "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
+      "my-account": "ನನ್ನ ಖಾತೆ",
+      "signin": "ಲಾಗಿನ್",
+      "view-cart": "ಕಾರ್ಟ್ ವೀಕ್ಷಿಸಿ",
+      "wishlist": "ಇಚ್ಛಿತ ಪಟ್ಟಿ",
+      "track-order": "ಆರ್ಡರ್ ಟ್ರ್ಯಾಕ್ ಮಾಡಿ",
+      "install-app": "ಅ್ಯಪ್ ಅನ್ನು ಸ್ಥಾಪಿಸಿ",
+      "download-app": "ಅ್ಯಪ್ ಸ್ಟೋರ್ ಅಥವಾ ಗೂಗಲ್ ಪ್ಲೇನಿಂದ",
+      "secure-pay": "ಸುರಕ್ಷಿತ ಪಾವತಿ ದ್ವಾರ",
+      "new-products": "ಹೊಸ ಉತ್ಪನ್ನಗಳು",
+      "dairy-products": "ಹಾಲು ಉತ್ಪನ್ನಗಳು",
+      "addcart":"ಕಾರ್ಟ್‌ಗೆ ಸೇರಿಸಿ",
+      "Productdetails":"ಉತ್ಪನ್ನ ವಿವರಗಳು",
+      "history":"ಆದೇಶ ಇತಿಹಾಸ",
+      "info":"ನಂದಿನಿ ಐಸ್ ಕ್ರೀಮ್ ಶುದ್ಧ ಹಾಲು ಮತ್ತು ಗುಣಮಟ್ಟದ ಪದಾರ್ಥಗಳಿಂದ ತಯಾರಿಸಲಾದ ರುಚಿಕರ ಮತ್ತು ತಾಜಾ ಡೆಸೆಟ್ ಅನ್ನು ನೀಡುತ್ತದೆ. ವಾನಿಲ್ಲಾ, ಸ್ಟ್ರಾಬೆರಿ, ಚಾಕೋಲೇಟ್ ಮತ್ತು ಮಾವು ಸೇರಿದಂತೆ ವಿವಿಧ ರುಚಿಗಳಲ್ಲಿ ಲಭ್ಯವಿರುವ ಈ ಐಸ್ ಕ್ರೀಮ್ ಎಲ್ಲಾ ರುಚಿಗೆ ತಕ್ಕಂತೆ ಇರುತ್ತದೆ. ಇದರ ಸಿಹಿಯಾದ, ನಯವಾದ ತೆಯಾರಿ ಮಕ್ಕಳಿಗೂ ವಯಸ್ಕರಿಗೂ ರುಚಿ ಉಂಟುಮಾಡುತ್ತದೆ. ಉತ್ಸವಗಳು ಅಥವಾ ತಕ್ಷಣದ ಸಿಹಿ ತಿನಿಸುಗಳಿಗೆ ಪರಿಪೂರ್ಣವಾದ ನಂದಿನಿ ಐಸ್ ಕ್ರೀಮ್ ಪ್ರತಿಯೊಂದು ಸ್ಕೂಪ್‌ನಲ್ಲೂ ರುಚಿ, ಗುಣಮಟ್ಟ ಮತ್ತು ಸಂಪ್ರದಾಯವನ್ನು ಒಳಗೊಂಡಿದೆ."}
+};
+
+function toggleDropdown() {
+  document.getElementById("dropdown-list").classList.toggle("show");
+}
+
+function selectItem(element) {
+  const lang = element.innerText;
+  const elements = document.querySelectorAll("[data-key]");
+  elements.forEach(el => {
+    const key = el.getAttribute("data-key");
+    if (translations[lang][key]) {
+      el.innerText = translations[lang][key];
+    }
+  });
+  document.getElementById("dropdown-list").classList.remove("show");
+  document.querySelector(".dropdown-selected").innerText = lang;
+}
+
+  document.getElementById("cart-toggle").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevents default <a href="#"> behavior
+    const cartBox = document.getElementById("cart-box");
+    cartBox.style.display = cartBox.style.display === "none" || cartBox.style.display === "" ? "block" : "none";
+  });
+
+  // Optional: Close the cart when clicking outside of it
+  document.addEventListener("click", function (event) {
+    const cartToggle = document.getElementById("cart-toggle");
+    const cartBox = document.getElementById("cart-box");
+    if (!cartToggle.contains(event.target) && !cartBox.contains(event.target)) {
+      cartBox.style.display = "none";
+    }
+  });
+function displayCart() {
+  const cartItemsContainer = document.getElementById("cart-items");
+  cartItemsContainer.innerHTML = "";
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML = "<p style='color:black;'>Your cart is empty.</p>";
+    return;
+  }
+
+  let totalAmount = 0;
+
+  cart.forEach((item, index) => {
+    const itemTotal = item.unitPrice * item.quantity;
+    totalAmount += itemTotal;
+
+    const itemDiv = document.createElement("div");
+    itemDiv.style = `
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      color: black;
+      font-size: 14px;
+    `;
+
+    itemDiv.innerHTML = `
+      <div style="display: flex; align-items: center;">
+        <img src="${item.img}" width="40" height="40" style="object-fit: cover; border-radius: 5px; margin-right: 8px;">
+        <div>
+          <p style="margin: 0;">${item.name}</p>
+          <p style="margin: 0;">₹${item.unitPrice} × ${item.quantity} = ₹${itemTotal}</p>
+        </div>
+      </div>
+      <button onclick="removeCartItem(${index})"
+        style="background: red; color: white; border: none; border-radius: 5px; padding: 5px 8px; cursor: pointer;">✕</button>
+    `;
+
+    cartItemsContainer.appendChild(itemDiv);
+  });
+
+  const totalDiv = document.createElement("div");
+  totalDiv.style = `
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    margin-top: 10px;
+    text-align: right;
+    font-weight: bold;
+    color: black;
+  `;
+  totalDiv.innerText = `Total: ₹${totalAmount}`;
+  cartItemsContainer.appendChild(totalDiv);
+}
+
+// ✅ Remove cart item
+function removeCartItem(index) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  displayCart();
+}
+
+// ✅ Add from home page
+document.querySelectorAll('#cart').forEach(button => {
+  button.addEventListener('click', function (e) {
+    e.preventDefault();
+    const product = this.closest('.pro');
+    const img = product.querySelector('img').getAttribute('src');
+    const name = product.querySelector('h5').textContent.trim();
+    const priceText = product.querySelector('h4').textContent.trim();
+    const unitPrice = parseInt(priceText.replace(/[^\d]/g, ''));
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingItem = cart.find(item => item.name === name && item.unitPrice === unitPrice);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ name, unitPrice, img, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+  });
+});
+
+// ✅ Add from product details page
+document.getElementById('detail-cart')?.addEventListener('click', function () {
+  const product = document.querySelector('#productdeatils');
+  if (!product) return;
+
+  const img = product.querySelector('.single-pro-image img').getAttribute('src');
+  const name = product.querySelector('.single-pro-details h4').textContent.trim();
+  const priceText = product.querySelector('.single-pro-details h3').textContent.trim();
+  const quantityInput = product.querySelector('input[type="number"]');
+  const quantity = parseInt(quantityInput.value) || 1;
+  const unitPrice = parseInt(priceText.replace(/[^\d]/g, ''));
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existingItem = cart.find(item => item.name === name && item.unitPrice === unitPrice);
+  if (existingItem) {
+    existingItem.quantity += quantity;
+  } else {
+    cart.push({ name, unitPrice, img, quantity });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  displayCart();
+});
+
+// ✅ On page load, show cart
+window.addEventListener("DOMContentLoaded", displayCart);
+
+
+document.getElementById("login-btn")?.addEventListener("click", () => {
+  const name = document.getElementById("user-name")?.value.trim();
+  const email = document.getElementById("user-email")?.value.trim();
+
+  if (!name || !email) {
+    alert("Please enter both name and email.");
+    return;
+  }
+
+  localStorage.setItem("loggedInUserName", name);
+  localStorage.setItem("loggedInUserEmail", email);
+  alert(`✅ Logged in as ${name}`);
+});
+
+// ✅ Order placement and EmailJS integration
+document.getElementById("place-order-btn")?.addEventListener("click", () => {
+  const userName = localStorage.getItem("loggedInUserName");
+  const userEmail = localStorage.getItem("loggedInUserEmail");
+  const messageBox = document.getElementById("order-message");
+
+  if (!userName || !userEmail) {
+    alert("Please login first.");
+    return;
+  }
+
+  if (cart.length === 0) {
+    alert("🛒 Cart is empty.");
+    return;
+  }
+
+    let totalAmount = 0;
+    let message = `<h3 style="margin:0; font-weight:bold; color:black;">✅ Order Placed!</h3><div>Thank you for your purchase!</div>`;
+
+    cart.forEach(item => {
+      const itemTotal = item.unitPrice * item.quantity;
+      totalAmount += itemTotal;
+
+      message += `
+        <div style="display:flex;align-items:center;margin:10px 0;gap:10px;">
+          <img src="${item.img}" style="width:60px;height:60px;border-radius:6px;object-fit:cover;">
+          <div>
+            <p style="margin:0;font-weight:bold; color:black">${item.name}</p>
+            <p style="margin:0; color:black">Quantity: ${item.quantity}</p>
+            <p style="margin:0; color:black">Price: ₹${item.unitPrice}</p>
+            <p style="margin:0; color:black">Total: ₹${itemTotal}</p>
+          </div>
+        </div>
+      `;
+    });
+
+    message += `<h4 style="color:black;">Grand Total: ₹${totalAmount}</h4>`;
+    message += `<h3 style="margin:0; font-weight:bold; color:black;">🧡 Thank you for your order!</h3>`;
+    messageBox.innerHTML = message;
+ if (userEmail && userName) {
+      const orderDetails = cart.map(item =>
+        `${item.name} (x${item.quantity}) - ₹${item.unitPrice * item.quantity}`
+      ).join('\n');
+
+      const emailMessage = `
+✅ Your order has been placed!
+
+🧺 Items:
+${orderDetails}
+
+💵 Grand Total: ₹${totalAmount}
+📍 Shipping: 2-3 days
+
+Thank you for shopping with Nandini Dairy!
+      `;
+
+      emailjs.send("service_sxhzguu", "template_w0gp7ln", {
+        to_email: userEmail,
+        to_name: userName,
+        message: emailMessage
+      }).then(() => {
+        console.log("✅ Email sent to", userEmail);
+      }).catch(error => {
+        console.error("❌ Email sending failed:", error);
+      });
+    } else {
+      console.warn("⚠️ Email not sent. User email or name missing in localStorage.");
+    }
+
+    cart.length = 0; // Clear cart
+    displayCart();
+  });
+
+
+
+
+
+ </script>
+  
+<script src="script.js"></script>
+</body>
+</html>

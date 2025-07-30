@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us - Nandini Dairy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #004aad;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .contact-form, .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-form h2, .contact-info h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 24px;
+      background-color: #004aad;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00338d;
+    }
+
+    .map-container {
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <h1>Contact Nandini Dairy</h1>
+
+    <div class="contact-wrapper">
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>Reach Us At</h2>
+        <p><strong>Address:</strong> Karnataka Milk Federation (KMF), Nandini Dairy, Bangalore - 560029</p>
+        <p><strong>Phone:</strong> +91-80-25536105 / 106</p>
+        <p><strong>Email:</strong> info@kmf.co.in</p>
+
+        <!-- Map -->
+        <div class="map-container">
+          <iframe 
+           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.9867680922413!2d77.5932462!3d12.9327307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15d0a8b8d6d5%3A0x9d48f83e725b86dc!2sKarnataka%20Milk%20Federation!5e0!3m2!1sen!2sin!4v1629295800609!5m2!1sen!2sin"
+  width="600"
+          loading="lazy" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("✅ Message sent successfully!");
+      window.location.href = "thanku.html";
+    });
+  </script>
+
+</body>
+</html>

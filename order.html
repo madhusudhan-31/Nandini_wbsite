@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Page</title>
+  <style>
+    #cart-box {
+      border: 1px solid #000;
+      padding: 10px;
+      max-width: 300px;
+    }
+    .hidden { display: none; }
+    .product-card { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div class="product-card">
+    <h3 class="product-name">Nandini Milk</h3>
+    <img src="milk.jpg" width="80" class="product-img" />
+    <p class="product-price">30</p>
+    <input type="number" min="1" value="1" class="product-qty" />
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+  <button id="cart-toggle">🛒 Cart</button>
+
+  <div id="cart-box" class="hidden"></div>
+
+  <script>
+    const cartBox = document.getElementById("cart-box");
+
+    // Toggle cart view
+    document.getElementById("cart-toggle").addEventListener("click", function () {
+      cartBox.classList.toggle("hidden");
+      renderCart();
+    });
+
+    // Add to cart logic
+    document.querySelector(".add-to-cart").addEventListener("click", function () {
+      const name = document.querySelector(".product-name").textContent.trim();
+      const img = document.querySelector(".product-img").getAttribute("src");
+      const unitPrice = parseFloat(document.querySelector(".product-price").textContent.trim());
+      const quantity = parseInt(document.querySelector(".product-qty").value.trim());
+
+      if (name && img && unitPrice && quantity > 0) {
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        cart.push({ name, img, unitPrice, quantity });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("✅ Added to cart!");
+      } else {
+        alert("❌ Invalid input!");
+      }
+    });
+
+    // Render cart
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      if (cart.length === 0) {
+        cartBox.innerHTML = "<p>🛒 Cart is empty.</p>";
+        return;
+      }
+
+      cartBox.innerHTML = `<h4>✅ Order Summary</h4>`;
+      cart.forEach((item, i) => {
+        const total = item.unitPrice * item.quantity;
+        cartBox.innerHTML += `
+          <div>
+            <img src="${item.img}" width="40" />
+            <b>${item.name}</b><br/>
+            Quantity: ${item.quantity} <br/>
+            Price: ₹${item.unitPrice} <br/>
+            Total: ₹${total.toFixed(2)}
+          </div><hr/>
+        `;
+      });
+
+      cartBox.innerHTML += `<button onclick="placeOrder()">✅ Place Order</button>`;
+    }
+
+    // Place order
+    function placeOrder() {
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      if (cart.length === 0) return alert("❌ Cart is empty.");
+
+      alert("✅ Order Placed!");
+      localStorage.removeItem("cart");
+      renderCart();
+    }
+  </script>
+</body>
+</html>
