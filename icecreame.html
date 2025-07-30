@@ -692,7 +692,32 @@ Thank you for shopping with Nandini Dairy!
   });
 
 
+function searchProduct() {
+  const input = document.getElementById("search-box").value.toLowerCase().trim();
+  const products = document.querySelectorAll(".pro");
+  const currentLang = localStorage.getItem("selectedLanguage") || "English";
 
+  for (let pro of products) {
+    const nameElement = pro.querySelector('h5');
+    if (!nameElement) continue;
+
+    const englishKey = nameElement.getAttribute("data-key");
+    if (!englishKey) continue;
+
+    const translated = translations[currentLang]?.[englishKey]?.toLowerCase();
+    const inputMatch = translated && translated.includes(input);
+
+    if (inputMatch || englishKey.toLowerCase().includes(input)) {
+      const fileToOpen = pro.getAttribute("data-file");
+      if (fileToOpen) {
+        window.location.href = fileToOpen;
+        return;
+      }
+    }
+  }
+
+  alert("❌ Product not found!");
+}
 
 
  </script>
